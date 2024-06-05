@@ -382,6 +382,7 @@ jobs:
             'zlib','zstd','bzip2','xz','brotli','libzip',
             // curl and its deps
             'nghttp2','libssh2','curl',
+            'sqlite',
             'libffi',
             'openssl',
             'onig',
@@ -417,8 +418,8 @@ jobs:
 
           foreach ($matrix['flavors'] as $flavor) {
               $libraries = match ($flavor) {
-                  'min' => 'libffi,zlib,libzip,bzip2,zstd,webview',
-                  'lite' => 'zstd,zlib,libffi,libzip,bzip2,xz,onig,webview',
+                  'min' => 'libffi,zlib,libzip,bzip2,zstd,webview,sqlite',
+                  'lite' => 'zstd,zlib,libffi,libzip,bzip2,xz,onig,webview,sqlite',
                   'max', 'max-swow' => $maxLibraries,
                   'max-libev' => "{$maxLibraries},libev",
                   'max-swoole' => "{$maxLibraries},libstdc++",
