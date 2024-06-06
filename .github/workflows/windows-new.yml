@@ -426,7 +426,7 @@ jobs:
                   'custom' => $customLibraries,
               };
               $extensions = match ($flavor) {
-                  'min' => 'ffi,filter,tokenizer,ctype,phar,fileinfo,iconv,curl,mysqlnd,mysqli,pdo,pdo_mysql,mbregex,sockets,gd,swow',
+                  'min' => 'ffi,filter,tokenizer,ctype,phar,fileinfo,curl,mysqlnd,mysqli,pdo,pdo_mysql,mbregex,sockets,gd,swow',
                   'lite' => 'opcache,ffi,filter,tokenizer,ctype,phar,mbstring,mbregex,sockets,zip,zstd,zlib,bz2,phar,fileinfo,mysqlnd,mysqli,pdo,pdo_mysql,gd,swow',
                   'max' => $maxExtensions,
                   'max-swow' => "{$maxExtensions},swow",
