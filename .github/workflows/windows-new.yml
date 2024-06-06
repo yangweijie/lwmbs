@@ -418,8 +418,8 @@ jobs:
 
           foreach ($matrix['flavors'] as $flavor) {
               $libraries = match ($flavor) {
-                  'min' =>  'zstd,zlib,libffi,libzip,bzip2,webview,libpng,libjpegturbo,freetype,libwebp',
-                  'lite' => 'zstd,zlib,libffi,libzip,bzip2,xz,onig,webview,libpng,libjpegturbo,freetype,libwebp',
+                  'min' =>  'zstd,zlib,libffi,libzip,bzip2,webview,libpng,libjpegturbo,freetype,libwebp,nghttp2,libssh2,curl',
+                  'lite' => 'zstd,zlib,libffi,libzip,bzip2,xz,onig,webview,libpng,libjpegturbo,freetype,libwebp,nghttp2,libssh2,curl',
                   'max', 'max-swow' => $maxLibraries,
                   'max-libev' => "{$maxLibraries},libev",
                   'max-swoole' => "{$maxLibraries},libstdc++",
