@@ -418,16 +418,16 @@ jobs:
 
           foreach ($matrix['flavors'] as $flavor) {
               $libraries = match ($flavor) {
-                  'min' =>  'zstd,zlib,libffi,libzip,bzip2,webview,libpng,libjpegturbo,freetype,libwebp,onig,nghttp2,openssl,libssh2,curl',
-                  'lite' => 'zstd,zlib,libffi,libzip,bzip2,xz,onig,webview,libpng,libjpegturbo,freetype,libwebp,onig,nghttp2,openssl,libssh2,curl',
+                  'min' =>  'zstd,zlib,libzip,bzip2,xz,brotli,libffi,webview,libpng,libjpegturbo,freetype,libwebp,onig,nghttp2,openssl,libssh2,curl',
+                  'lite' => 'zstd,zlib,libzip,bzip2,xz,brotli,libffi,onig,webview,libpng,libjpegturbo,freetype,libwebp,onig,nghttp2,openssl,libssh2,curl',
                   'max', 'max-swow' => $maxLibraries,
                   'max-libev' => "{$maxLibraries},libev",
                   'max-swoole' => "{$maxLibraries},libstdc++",
                   'custom' => $customLibraries,
               };
               $extensions = match ($flavor) {
-                  'min' => 'ffi,filter,tokenizer,ctype,phar,fileinfo,curl,openssl,mysqlnd,mysqli,pdo,pdo_mysql,mbregex,sockets,gd,swow',
-                  'lite' => 'opcache,ffi,filter,tokenizer,ctype,phar,openssl,curl,mbstring,mbregex,sockets,zip,zstd,zlib,bz2,phar,fileinfo,mysqlnd,mysqli,pdo,pdo_mysql,gd,swow',
+                  'min' => 'ffi,filter,tokenizer,ctype,phar,zip,zlib,bz2,zstd,fileinfo,curl,openssl,mysqlnd,mysqli,pdo,pdo_mysql,mbregex,sockets,gd,swow',
+                  'lite' => 'opcache,ffi,filter,tokenizer,ctype,phar,zip,zlib,bz2,zstd,openssl,curl,mbstring,mbregex,sockets,zip,zstd,zlib,bz2,phar,fileinfo,mysqlnd,mysqli,pdo,pdo_mysql,gd,swow',
                   'max' => $maxExtensions,
                   'max-swow' => "{$maxExtensions},swow",
                   'max-swoole' => "{$maxExtensions},swoole",
